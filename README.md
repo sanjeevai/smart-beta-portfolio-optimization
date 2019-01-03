@@ -182,6 +182,10 @@ Now, let's look at the covariance generated from `get_covariance_returns`:
 
 <a id='opt_portfolio'></a>
 
+The function `get_optimal_weights` uses Python's `cvxpy` module to perforam **convex optimization**.
+
+It returns a vector which show the distribution of stocks' weights in our portfolio.
+
 #### Optimized Portfolio
 
 Now let's compare our ETF returns with index returns:
