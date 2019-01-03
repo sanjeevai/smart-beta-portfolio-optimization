@@ -142,7 +142,7 @@ The function `tracking_error` in cell no. 15 returns the tracking error between 
 
 For reference, we'll be using the following annualized tracking error function:
 
-<img src='./img/error_function.jpg' style='width:300px'>
+<img src='./img/error_function.jpg' style='width:200px'>
 
 Where _r<sub>p</sub>_ is is the portfolio/ETF returns and _r<sub>b</sub>_ is the benchmark returns.
 
