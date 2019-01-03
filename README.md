@@ -217,6 +217,8 @@ With the portfolio rebalanced, we need to use a metric to measure the cost of re
 
 <img src='./img/latex_turnover.jpg'>
 
+Evaluating the function for our rebalanced portfolio gives a turnover of 16.59 %.
+
 <a id='files'></a>
 
 ### Files
