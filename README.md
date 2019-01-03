@@ -231,4 +231,4 @@ With the portfolio rebalanced, we need to use a metric to measure the cost of re
 
 ### Libraries
 
-Necessary libraries are mentioned in `requirements.txt`.
+This project used Python 3.6.3. and the necessary libraries are mentioned in `requirements.txt`.
