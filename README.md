@@ -221,6 +221,14 @@ With the portfolio rebalanced, we need to use a metric to measure the cost of re
 
 ### Files
 
+- _Graph_ folder contains plots (interactive) generated when implementing functions on input data.
+- _img_ folder contains screenshots of the plots above for documentation purpose.
+- `helper.py`, `project_helper.py`, `project_tests.py` and `tests.py` are helper files which provide visualizations and unit tests.
+- `project_3_starter.ipynb` is the notebook where I completed the project
+- `project_3_starter.html` is just the HTML export of it.
+
 <a id='lib'></a>
 
 ### Libraries
+
+Necessary libraries are mentioned in `requirements.txt`.
