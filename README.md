@@ -25,6 +25,8 @@
 6. [Files](#files)
 7. [Libraries](#lib)
 
+***
+
 <a id='overview'></a>
 
 ### Project Overview
