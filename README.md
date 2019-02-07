@@ -29,7 +29,7 @@
 
 <a id='overview'></a>
 
-### Project Overview
+## Project Overview
 
 **Smart beta** has a broad meaning, but we can say in practice that when we use the universe of stocks from an index, and then apply some weighting scheme **other than market cap weighting**, it can be considered a type of **smart beta fund**.  A Smart Beta portfolio generally gives investors exposure or "beta" to one or more types of market characteristics (or factors) that are believed to predict prices while giving investors a diversified broad exposure to a particular market. Smart Beta portfolios generally target momentum, earnings quality, low volatility, and dividends or some combination.
 
@@ -53,13 +53,13 @@ Smart Beta ETFs can be designed with both of these two general methods (among ot
 
 <a id='description'></a>
 
-### Project Description
+## Project Description
 
 In this project, I will build a smart beta portfolio and compare it to a benchmark index. To find out how well the smart beta portfolio did, I'll calculate the tracking error against the index. I'll then build a portfolio by using **quadratic programming** to optimize the weights. My code will rebalance this portfolio and calculate turn over to evaluate the performance. I'll use this metric to find the optimal rebalancing Frequency.
 
 <a id='data'></a>
 
-### Data
+## Data
 
 For the dataset, we'll be using the end of day from [Quotemedia](https://www.quotemedia.com).
 
@@ -71,7 +71,7 @@ This is how the data looks like:
 
 <a id='smart-beta'></a>
 
-### Part 1: Smart Beta Portfolio
+## Part 1: Smart Beta Portfolio
 
 In Part 1 of this project, I'll build a portfolio using dividend yield to choose the portfolio weights. A portfolio such as this could be incorporated into a smart beta ETF.  I'll compare this portfolio to a market cap weighted index to see how well it performs. 
 
@@ -79,7 +79,7 @@ In Part 1 of this project, I'll build a portfolio using dividend yield to choose
 
 <a id='index_weights'></a>
 
-#### Index Weights
+### Index Weights
 
 The function `generate_dollar_volume_weights` in cell no. 5 does this task.
 
@@ -89,7 +89,7 @@ This is what our simulated **index weights** look like:
 
 <a id='portfolio_weights'></a>
 
-#### Portfolio Weights
+### Portfolio Weights
 
 Now that we have the index weights, let's choose the portfolio weights based on dividend. We would normally calculate the weights based on trailing dividend yield, but we'll simplify this by just calculating the total dividend yield over time.
 
@@ -101,7 +101,7 @@ Just like the index weights, let's see the ETF weights:
 
 <a id='rets'></a>
 
-#### Returns
+### Returns
 
 The function `generate_returns` in cell no. 9 generates returns data for all the stocks and dates from price data. You might notice we're implementing returns and not log returns. Since we're **not dealing with volatility**, we don't have to use log returns.
 
@@ -111,7 +111,7 @@ Here is the heatmap of returns for daily closing price:
 
 <a id='weighted_rets'></a>
 
-#### Weighted Returns
+### Weighted Returns
 
 With the returns of each stock computed, we can use it to compute the returns for an index or ETF.
 
@@ -124,7 +124,7 @@ Here is what ETF and index returns look like:
 
 <a id='cum_rets'></a>
 
-#### Cumulative Returns
+### Cumulative Returns
 
 To compare performance between the ETF and Index, we're going to calculate the tracking error. Before we do that, we first need to calculate the index and ETF cumulative returns.
 
@@ -136,7 +136,7 @@ Let's generate the ETF and index cumulative returns using `calculate_cumulative_
 
 <a id='error'></a>
 
-#### Tracking Error
+### Tracking Error
 
 In order to check the performance of the smart beta portfolio, we can calculate the annualized tracking error against the index.
 
@@ -156,7 +156,7 @@ Now let's generate the tracking error using this function:
 
 <a id='portfolio_opt'></a>
 
-### Part 2: Portfolio Optimization
+## Part 2: Portfolio Optimization
 
 Now, let's create a second portfolio.  We'll still reuse the market cap weighted index, but this will be independent of the dividend-weighted portfolio that we created in [Part 1](#portfolio_weights).
 
@@ -170,7 +170,7 @@ Why are we doing this? One way that investors evaluate a fund is by how well it 
 
 <a id='cov'></a>
 
-#### Covariance
+### Covariance
 
 The function `get_covariance_returns` calculates the covariance of the `returns`. This helps to calculate the portfolio variance.
 
@@ -188,7 +188,7 @@ The function `get_optimal_weights` uses Python's `cvxpy` module to perforam **co
 
 It returns a vector which show the distribution of stocks' weights in our portfolio.
 
-#### Optimized Portfolio
+### Optimized Portfolio
 
 Now let's compare our ETF returns with index returns:
 
@@ -196,7 +196,7 @@ Now let's compare our ETF returns with index returns:
 
 <a id='rebalance'></a>
 
-#### Rebalance Portfolio Over Time
+### Rebalance Portfolio Over Time
 
 The single optimized ETF portfolio used the same weights for the entire history. This might not be the optimal weights for the entire period. We will rebalance the portfolio over the same period instead of using the same weights.
 
@@ -217,7 +217,7 @@ all_rebalance_weights = rebalance_portfolio(
 
 <a id='turnover'></a>
 
-#### Portfolio turnover
+### Portfolio turnover
 
 With the portfolio rebalanced, we need to use a metric to measure the cost of rebalancing the portfolio. The function `get_portfolio_turnover` in cell no. 24 calculates the annual portfolio turnover. Thes turnover formulas were used used in class:
 
@@ -227,7 +227,7 @@ Evaluating the function for our rebalanced portfolio gives a turnover of 16.59 %
 
 <a id='files'></a>
 
-### Files
+## Files
 
 - _Graph_ folder contains plots (interactive) generated when implementing functions on input data.
 - _img_ folder contains screenshots of the plots above for documentation purpose.
@@ -237,6 +237,6 @@ Evaluating the function for our rebalanced portfolio gives a turnover of 16.59 %
 
 <a id='lib'></a>
 
-### Libraries
+## Libraries
 
 This project used Python 3.6.3. and the necessary libraries are mentioned in `requirements.txt`.
